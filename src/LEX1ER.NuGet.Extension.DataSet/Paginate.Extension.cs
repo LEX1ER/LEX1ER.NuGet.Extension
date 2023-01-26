@@ -11,10 +11,14 @@ namespace LEX1ER.NuGet.Extension.DataSet
 
             var take = itemPerPage;
             var skip = (page - 1) * take;
+            var data = entities;
 
-            var data = entities
-                .Take(take)
-                .Skip(skip);
+            if (take > 0)
+            {
+                data = data
+                    .Skip(skip)
+                    .Take(take);
+            }
             return data;
         }
     }
