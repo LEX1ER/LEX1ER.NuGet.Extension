@@ -12,7 +12,7 @@ namespace LEX1ER.NuGet.Extension.DataSet.Test
         {
             Paginate = new Paginate
             {
-                Page = 1,
+                Page = 2,
                 ItemsPerPage = 10
             },
             OrderBy = new OrderBy
@@ -54,7 +54,7 @@ namespace LEX1ER.NuGet.Extension.DataSet.Test
         [Test]
         public void TestDatatableDataSort()
         {
-            Assert.ByVal(DataTable.Data.First().Name, Is.EqualTo($"Name {100}"));
+            Assert.ByVal(DataTable.Data.First().Name, Is.EqualTo($"Name {Length}"));
         }
     }
 }
