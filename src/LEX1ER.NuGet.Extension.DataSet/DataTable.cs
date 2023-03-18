@@ -1,7 +1,4 @@
 ﻿using LEX1ER.NuGet.Extension.DataSet.Interfaces;
-using System.Collections;
-using System.Linq.Expressions;
-using System.Net.Http.Headers;
 
 namespace LEX1ER.NuGet.Extension.DataSet
 {
@@ -54,7 +51,7 @@ namespace LEX1ER.NuGet.Extension.DataSet
             }
             entities ??= default!;
             Data = entities;
-            return this; 
+            return this;
         }
-    } 
+    }
 }
