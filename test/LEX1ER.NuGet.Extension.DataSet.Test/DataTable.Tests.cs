@@ -7,18 +7,18 @@ namespace LEX1ER.NuGet.Extension.DataSet.Test
     public partial class Tests
     {
         private DataTable<User> DataTable { get; set; } = default!;
-        readonly static int Length = 100;
+        readonly static int Length = 1000;
         private Request Request { get; set; } = new Request()
         {
             Paginate = new Paginate
             {
-                Page = 2,
-                ItemsPerPage = 10
+                Page = 6,
+                ItemsPerPage = 36
             },
             OrderBy = new OrderBy
             {
-                Sort = new bool[1] { true },
-                SortBy = new string[1] { "Id" }
+                Sort = [true],
+                SortBy = ["Id"]
             }
         };
 
@@ -54,7 +54,7 @@ namespace LEX1ER.NuGet.Extension.DataSet.Test
         [Test]
         public void TestDatatableDataSort()
         {
-            Assert.ByVal(DataTable.Data.First().Name, Is.EqualTo($"Name {Length}"));
+            Assert.ByVal(DataTable.Data.First().Name, Is.EqualTo($"Name {Length - ((Request.Paginate.Page - 1) * Request.Paginate.ItemsPerPage)}"));
         }
     }
 }
