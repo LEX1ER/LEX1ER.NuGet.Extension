@@ -4,7 +4,7 @@ namespace LEX1ER.NuGet.Extension.DataSet
 {
     public static partial class Extension
     {
-        internal static IQueryable<TEntity> Paginate<TEntity>(this IQueryable<TEntity> entities, IPaginate paginate)
+        public static IQueryable<TEntity> Paginate<TEntity>(this IQueryable<TEntity> entities, IPaginate paginate)
         {
             var page = paginate.Page;
             var itemPerPage = paginate.ItemsPerPage;
