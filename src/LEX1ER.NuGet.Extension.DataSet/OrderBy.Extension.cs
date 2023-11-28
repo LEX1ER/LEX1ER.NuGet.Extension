@@ -12,7 +12,7 @@ namespace LEX1ER.NuGet.Extension.DataSet
             {
                 var sort = orderBy.Sort[i];
                 var sortBy = orderBy.SortBy[i];
-                var sortType = sort ? "DESC" : "ASC";
+                var sortType = (sort ?? false) ? "DESC" : "ASC";
                 order.Add($"{sortBy} {sortType}");
             }
             if (order.Count() == 0) return source;

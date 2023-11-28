@@ -2,7 +2,7 @@
 {
     public interface IOrderBy
     {
-        public bool[] Sort { get; set; }
-        public string[] SortBy { get; set; }
+        public bool?[] Sort { get; set; }
+        public string?[] SortBy { get; set; }
     }
 }

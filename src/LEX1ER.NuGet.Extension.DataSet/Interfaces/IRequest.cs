@@ -3,6 +3,6 @@
     public interface IRequest
     {
         Paginate Paginate { get; set; }
-        OrderBy OrderBy { get; set; }
+        OrderBy? OrderBy { get; set; }
     }
 }
