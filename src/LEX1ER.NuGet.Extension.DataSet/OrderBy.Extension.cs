@@ -5,10 +5,10 @@ namespace LEX1ER.NuGet.Extension.DataSet
 {
     public static partial class Extension
     {
-        public static IQueryable<T> OrderBy<T>(this IQueryable<T> source, IOrderBy orderBy)
+        public static IQueryable<T> OrderBy<T>(this IQueryable<T> source, IOrderBy? orderBy)
         {
             var order = new List<string>();
-            for (int i = 0; i < orderBy.Sort.Length; i++)
+            for (int i = 0; i < orderBy?.Sort.Length; i++)
             {
                 var sort = orderBy.Sort[i];
                 var sortBy = orderBy.SortBy[i];
